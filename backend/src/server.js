@@ -1,5 +1,7 @@
 const express = require('express')
 const mongoose = require('mongoose')
+const cors = require('cors')
+
 const routes = require('./routes')
 
 const app = express()
@@ -15,6 +17,7 @@ mongoose.connect('mongodb+srv://omnistack9:omnistack9@cluster0-upsmw.mongodb.net
 //req.params = Acessar route params, usado para filtros
 //req.body = Acessar corpo da requisicao
 
+app.use(cors())
 app.use(express.json())
 app.use(routes)
 

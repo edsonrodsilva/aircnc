@@ -4,26 +4,22 @@
   margin: 0;
   padding: 0;
   outline: 0;
-  box-sizing: border-box;
+  box-sizing: border-box; /* espacamentos */
 }
 
 html, body, #root {
-  min-height: 100%;
+  min-height: 100%; /* fundo ocupar a tela toda */
 }
 
 body {
   background: #000 url('./assets/background.jpg') no-repeat;
-  background-size: cover;
-  -webkit-font-smoothing: antialiased !important;  
+  background-size: cover; /* a imagem cubra a tela toda */
+  -webkit-font-smoothing: antialiased !important; /* deixa a font mais detalhada */
 }
 
 body, input, button {
   font-family: 'Roboto', Arial, Helvetica, sans-serif;
   font-size: 14px;
-}
-
-.container img {
-  max-width: 130px;
 }
 
 .container {
@@ -49,6 +45,11 @@ body, input, button {
   margin-bottom: 30px;
 }
 
+.content form {
+  display: flex;
+  flex-direction: column;
+}
+
 .content form label {
   font-size: 14px;
   color:#444;
@@ -56,10 +57,13 @@ body, input, button {
   margin-bottom: 8px;
 }
 
+.content form label span {
+  color: #e14f50;
+}
 
 .content form input {
   margin-bottom: 20px;
-  border: 1px;
+  border: 1px solid #ddd;
   border-radius: 2px;
   height: 45px;
   padding: 0 15px;
