@@ -6,13 +6,13 @@ import logo from './assets/logo.svg';
 
 function App() {
 
-  const [email, setEmail] = useState('')
+  const [email, setEmail] = useState('');
 
   async function HandleSubmit(event) {
     event.preventDefault();
-    
-    const response = await api.post('/sessions', { email } )
-
+    const response = await api.post('/sessions', { email } );
+    const { _id } = response.data;
+    localStorage.setItem('user', _id)
   }
 
   return (
@@ -33,8 +33,8 @@ function App() {
             value={email}
             onChange={event => setEmail(event.target.value)}
           />
-        <button className="btn" type="submit">Entrar</button>
-      </form>
+          <button className="btn" type="submit">Entrar</button>
+        </form>
       </div>      
     </div>
   );
